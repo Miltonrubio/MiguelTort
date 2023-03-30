@@ -27,6 +27,9 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
   <!-- =======================================================
   * Template Name: iPortfolio
   * Updated: Mar 10 2023 with Bootstrap v5.2.3
@@ -651,7 +654,7 @@
           </div>
 
           <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
-              <form enctype="multipart/form-data" id="frmajax" method="POST" action="php/agregarContacto.php"  role="form" class="php-email-form">
+              <form method="POST" class="php-email-form">
                             
               <div class="row">
                 <div class="form-group col-md-6">
@@ -676,21 +679,26 @@
                 <div class="error-message"></div>
                 <div class="sent-message">Su mensaje ha sido enviado, pronto me pondre en contacto con usted!</div>
               </div>
-              <div class="text-center"><button type="submit">Enviar mensaje</button></div>
+              <div class="text-center"><button type="submit" name="enviar">Enviar mensaje</button></div>
             </form>
           </div>
 
+          <?php	
+include("mensaje.php");
+
+?>
+    
         </div>
 
       </div>
 
 
-
+<!-- 
       <script type="text/javascript">
         $(document).ready(function () {
             $("#frmajax").on("submit", function (event) {
 
-                event.preventDefault();
+                event.preventDefault(); 
 
                 var form = $('#frmajax')[0];
                 var formData = new FormData(form);
@@ -718,7 +726,7 @@
     </script>
 
 
-
+--->
 
     </section><!-- End Contact Section -->
 
@@ -737,7 +745,7 @@
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/ -->
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         Desarrollado por <a href="https://envelopesoftware.mx/">Envelope</a><br>
-      <a href="login.php">Iniciar Sesión</a>  
+      <a href="#">Iniciar Sesión</a>  
       </div>
     </div>
   </footer><!-- End  Footer -->
